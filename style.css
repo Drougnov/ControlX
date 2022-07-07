@@ -5,7 +5,9 @@
     box-sizing: border-box;
 }
 :root{
-    --blur: 40px;
+    --opacity: 0.5;
+    --blur: 1px;
+    --color: #ffffff;
 }
 body{
     min-height: 100vh;
@@ -20,16 +22,17 @@ body .bg-blur{
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4a_Pzy-pLGSRjY20-hYrBWHhZUffsOX1_4w&usqp=CAU) no-repeat;
-    background-size: 100% 100%;
+    background: url('./images/bg.svg.svg') no-repeat center center fixed;
+    background-size: cover;
     z-index: -2;
-    filter: blur(1px);
+    transform: scaleX(-1);
+    filter: blur(var(--blur));
 }
 main{
     max-width: 1100px;
     height: 100vh;
-    position: relative;
     animation: fromLeft .5s linear;
+    position: relative;
 }
 @keyframes fromLeft{
     0%{
@@ -47,7 +50,7 @@ main .bg-opacity{
     height: 100%;
     background-color: #2d3436;
     background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-    opacity: .5;
+    opacity: var(--opacity);
     z-index: -1;
 }
 main nav{
@@ -72,37 +75,76 @@ nav .logo{
     font-size: 2rem;
     font-weight: 800;
 }
+.logo span{
+    color: var(--color);
+}
 nav .customize{
-    position: relative;
     font-weight: 300;
     cursor: pointer;
+    position: relative;
 }
 .customize .fa-gear{
+    color: var(--color);
     margin-left: .5rem;
+    animation: all .3s linear;
+}
+.customize.active .fa-gear{
+    transform: rotate(360deg);
 }
 .customize .control{
     display: none;
 }
-.customize:hover .control{
+.customize.active .control{
     position: absolute;
     display: block;
+    color: black;
     background: white;
     list-style-type: none;
-    padding: 1rem;
     border-radius: .5rem;
+    padding: 1rem;
 }
 main .text-content{
     position: absolute;
-    top: 60%;
-    left: 5rem;
+    top: 45%;
     transform: translateY(-50%);
     max-width: 700px;
+    margin: 5rem;
     animation: fadeIn 1.3s linear;
 }
 .text-content h1{
+    max-width: 550px;
+    color: var(--color);
     font-size: 4rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    max-width: 550px;
     margin-bottom: 1rem;
+}
+@media(max-width:800px){
+    body{
+        font-size: 1rem;
+    }
+    main nav{
+        align-items: center;
+        padding: 2rem 3rem;
+    }
+    main .text-content{
+        top: 50%;
+        margin: 3rem;
+    }
+    .text-content h1{
+        font-size: 3rem;
+        max-width: 400px;
+    }
+}
+@media(max-width:426px){
+    main nav{
+        padding: 1.5rem;
+    }
+    main .text-content{
+        text-align: center;
+        margin: 1.5rem;
+    }
+    .text-content h1{
+        font-size: 2rem;
+    }
 }
