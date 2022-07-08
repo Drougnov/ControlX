@@ -21,7 +21,7 @@ This project teaches(especially) you how to:
 -call function with change and mouseover eventlistener
 
 Here is my project site's url-
-<https://drougnov.github.io/controlx/>
+<https://drougnov.github.io/ControlX/>
 
 ## Built with
 
