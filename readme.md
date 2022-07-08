@@ -10,7 +10,7 @@ Hello! Thanks for cheking out this repository.
 
 It is a customizealbe website that can be customized with the help of CSS variables and vanilla JS.
 
-I've been practicing basic javascript project from [wesbos's javascript 30 course](https://courses.wesbos.com/account/access/62adf09d8ed3995269d75c5a). This is the day4 project.
+I've been practicing basic javascript project from [wesbos's javascript 30 course](https://courses.wesbos.com/account/access/62adf09d8ed3995269d75c5a). This is the day3 project.
 
 This project teaches(especially) you how to:
 
